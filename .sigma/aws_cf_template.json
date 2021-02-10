@@ -80,7 +80,24 @@
               }
             }
           ]
-        }
+        },
+        "Policies": [
+          {
+            "PolicyName": "cfylDemoPolicy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:GetItem"
+                  ],
+                  "Resource": "arn:aws:dynamodb:us-west-2:567762235644:table/asset_table"
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     "alexaSK2ac7db1fb5adcfylDemoPermission": {

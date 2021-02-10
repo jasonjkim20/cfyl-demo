@@ -1,3 +1,5 @@
+import boto3
+ddb = boto3.client("dynamodb")
 import logging
 import json
 import prompts
@@ -20,34 +22,58 @@ logger = logging.getLogger("main")
 logger.setLevel(logging.INFO)
 
 
-class LaunchRequestIntentHandler(AbstractRequestHandler):
-    """
-    Handles LaunchRequest requests sent by Alexa
-    Note: this type of request is sent when hte user invokes your skill without providing a specific intent
-    """
-
+class LaunchRequestHandler(AbstractRequestHandler):
+    """Handler for Skill Launch."""
     def can_handle(self, handler_input):
-        return is_request_type("LaunchRequest")(handler_input)
+        # type: (HandlerInput) -> bool
+
+        return ask_utils.is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
-        data = handler_input.attributes_manager.request_attributes["_"]
-        # Get a random recipe
-        random_recipe = recipe_utils.get_random_recipe(handler_input)
-        # Get prompt and reprompt speech
-        speak_output = data[prompts.WELCOME_MESSAGE].format(
-            data[prompts.SKILL_NAME], random_recipe['name'])
-        reprompt_output = data[prompts.WELCOME_REPROMPT]
-        # Add APL Template if device is compatible
-        apl_utils.launch_screen(handler_input)
-        # Generate JSON Response
-        return handler_input.response_builder.speak(speak_output).ask(reprompt_output).response
+        # type: (HandlerInput) -> Response
+        speak_output = "Hello! Welcome to Cook For Your Life. What is your name?"
+        reprompt_text = "My name is Alexa, what is your name?"
+        #reprompt_text = "I was born Nov. 6th, 2014. When were you born?"
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask(reprompt_text)
+                .response
+        )
 
 
-class RecipeIntentHandler(AbstractRequestHandler):
-    """
-    Handles RecipeIntent or APL Touch Event requests sent by Alexa
-    """
+class GetRecipeIntentHandler(AbstractRequestHandler):
+    def can_handle(self, handler_input):
+        return is_intent_name("GetRecipeIntent")(handler_input) or \
+            (is_request_type('Alexa.Presentation.APL.UserEvent')(handler_input) and
+                len(list(handler_input.request_envelope.request.arguments)) > 0 and
+                list(handler_input.request_envelope.request.arguments)[0] == 'recipeInstructions')
 
+    def handle(self, handler_input):
+        logger.info("In GetRecipeIntent")
+        Item = handler_input.request_envelope.request.intent.slots['Item'].value
+        try:
+            asset = ddb.get_item(
+                TableName="asset_table",
+                Key={
+                    'asset_id': {
+                        'S': Item
+                    }
+                }
+            )
+        except BaseException as e:
+            print(e)
+            raise(e)
+        
+        speak_output = "Here is the recipe for " + Item + ". " + asset['Item']['recipe']['S']
+        #+ '. Wanna know something else?' + data['Item']['description']['S']
+
+        handler_input.response_builder.speak(speak_output).ask(speak_output)
+
+        return handler_input.response_builder.response
+
+    '''
     def can_handle(self, handler_input):
         return is_intent_name("RecipeIntent")(handler_input) or \
             (is_request_type('Alexa.Presentation.APL.UserEvent')(handler_input) and
@@ -100,7 +126,7 @@ class RecipeIntentHandler(AbstractRequestHandler):
 
         # Generate JSON response
         return handler_input.response_builder.response
-
+    '''
 
 class PreviousHandler(AbstractRequestHandler):
     """

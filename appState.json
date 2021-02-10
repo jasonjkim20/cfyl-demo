@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "cfyl-demo.py",
         "cursor": {
-          "lineNumber": 376,
-          "column": 83
+          "lineNumber": 30,
+          "column": 73
         },
         "config": {
           "runtime": "python3.8",
@@ -28,7 +28,7 @@
             "config": {}
           }
         ],
-        "lastUpdated": 1612946033608
+        "lastUpdated": 1612946824299
       },
       "abd868c7-d2bb-4d5a-8627-024303848736": {
         "id": "abd868c7-d2bb-4d5a-8627-024303848736",
@@ -49,7 +49,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "recipe_utils.py",
-        "lastUpdated": 1612946005136,
+        "lastUpdated": 1612946821578,
         "cursor": {
           "lineNumber": 53,
           "column": 19
@@ -118,6 +118,21 @@
         "isRemovable": true,
         "filePath": "documents/launchRequest.json",
         "lastUpdated": 1612946191116
+      },
+      "9748a5e1-1040-4441-bd5e-012eb9656f6d": {
+        "id": "9748a5e1-1040-4441-bd5e-012eb9656f6d",
+        "parent": null,
+        "name": "apl_utils.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "apl_utils.py",
+        "lastUpdated": 1612946611388,
+        "cursor": {
+          "lineNumber": 151,
+          "column": 66
+        }
       }
     },
     "openFiles": [
@@ -126,9 +141,10 @@
       "3b022ef7-df9d-4b05-b213-7f1b8027a3ff",
       "3819a116-aedc-4783-8c7a-f2c34aa37e9f",
       "79865930-962b-4c95-ad2a-2df58f0df22a",
-      "55e489b2-37e5-4980-8cdf-002e61549646"
+      "55e489b2-37e5-4980-8cdf-002e61549646",
+      "9748a5e1-1040-4441-bd5e-012eb9656f6d"
     ],
-    "currentFileId": "55e489b2-37e5-4980-8cdf-002e61549646",
+    "currentFileId": "7d068a25-d742-4359-882e-73f7d0623c9f",
     "resources": {
       "alexaSK2ac7db1fb5ad43a698d20645264113a9": {
         "name": "alexaSK2ac7db1fb5ad43a698d20645264113a9",
@@ -138,6 +154,25 @@
           "verifiedID": true,
           "skillID": "amzn1.ask.skill.2ac7db1f-b5ad-43a6-98d2-0645264113a9",
           "applicationID": ""
+        }
+      },
+      "ddbassettable": {
+        "name": "ddbassettable",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "table": {
+            "arn": "arn:aws:dynamodb:us-west-2:567762235644:table/asset_table",
+            "name": "asset_table",
+            "partitionKey": "asset_id",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "",
+            "payPerRequest": true,
+            "mode": 1,
+            "secondaryIndexes": {}
+          }
         }
       }
     },
@@ -167,9 +202,10 @@
         },
         "boto3": {
           "name": "boto3",
+          "language": "python",
           "version": "1.16.43",
-          "dev": false,
-          "language": "python"
+          "dev": true,
+          "notRemovable": false
         },
         "ask_sdk_model": {
           "name": "ask_sdk_model",
@@ -189,7 +225,7 @@
     "platform": "AWS",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1612946206727
+    "lastSave": 1612947049688
   },
   "VCS_STATE": {
     "provider": "GitHub",
