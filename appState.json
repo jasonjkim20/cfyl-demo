@@ -1,0 +1,201 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "7d068a25-d742-4359-882e-73f7d0623c9f": {
+        "id": "7d068a25-d742-4359-882e-73f7d0623c9f",
+        "parent": null,
+        "name": "cfyl-demo.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "cfyl-demo.py",
+        "cursor": {
+          "lineNumber": 376,
+          "column": 83
+        },
+        "config": {
+          "runtime": "python3.8",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": [],
+          "name": "cfylDemo"
+        },
+        "triggers": [
+          {
+            "resourceName": "alexaSK2ac7db1fb5ad43a698d20645264113a9",
+            "config": {}
+          }
+        ],
+        "lastUpdated": 1612946033608
+      },
+      "abd868c7-d2bb-4d5a-8627-024303848736": {
+        "id": "abd868c7-d2bb-4d5a-8627-024303848736",
+        "parent": null,
+        "name": "requirements.txt",
+        "type": "TEXT_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "requirements.txt"
+      },
+      "ac3d15ae-810f-4492-bc34-cd68ded93192": {
+        "id": "ac3d15ae-810f-4492-bc34-cd68ded93192",
+        "parent": null,
+        "name": "recipe_utils.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "recipe_utils.py",
+        "lastUpdated": 1612946005136,
+        "cursor": {
+          "lineNumber": 53,
+          "column": 19
+        }
+      },
+      "3b022ef7-df9d-4b05-b213-7f1b8027a3ff": {
+        "id": "3b022ef7-df9d-4b05-b213-7f1b8027a3ff",
+        "parent": null,
+        "name": "prompts.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "prompts.py",
+        "lastUpdated": 1612946109623,
+        "cursor": {
+          "lineNumber": 17,
+          "column": 32
+        }
+      },
+      "3819a116-aedc-4783-8c7a-f2c34aa37e9f": {
+        "id": "3819a116-aedc-4783-8c7a-f2c34aa37e9f",
+        "parent": null,
+        "name": "recipes.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "recipes.py",
+        "lastUpdated": 1612946126151,
+        "cursor": {
+          "lineNumber": 112,
+          "column": 2
+        }
+      },
+      "79865930-962b-4c95-ad2a-2df58f0df22a": {
+        "id": "79865930-962b-4c95-ad2a-2df58f0df22a",
+        "parent": null,
+        "name": "language_strings.json",
+        "type": "JSON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "language_strings.json",
+        "lastUpdated": 1612946144620
+      },
+      "76ca20a6-c606-4604-9430-9c7066b0a2fa": {
+        "id": "76ca20a6-c606-4604-9430-9c7066b0a2fa",
+        "parent": null,
+        "name": "documents",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "55e489b2-37e5-4980-8cdf-002e61549646"
+        ],
+        "isRemovable": true,
+        "filePath": "documents"
+      },
+      "55e489b2-37e5-4980-8cdf-002e61549646": {
+        "id": "55e489b2-37e5-4980-8cdf-002e61549646",
+        "parent": "76ca20a6-c606-4604-9430-9c7066b0a2fa",
+        "name": "launchRequest.json",
+        "type": "JSON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "documents/launchRequest.json",
+        "lastUpdated": 1612946191116
+      }
+    },
+    "openFiles": [
+      "7d068a25-d742-4359-882e-73f7d0623c9f",
+      "ac3d15ae-810f-4492-bc34-cd68ded93192",
+      "3b022ef7-df9d-4b05-b213-7f1b8027a3ff",
+      "3819a116-aedc-4783-8c7a-f2c34aa37e9f",
+      "79865930-962b-4c95-ad2a-2df58f0df22a",
+      "55e489b2-37e5-4980-8cdf-002e61549646"
+    ],
+    "currentFileId": "55e489b2-37e5-4980-8cdf-002e61549646",
+    "resources": {
+      "alexaSK2ac7db1fb5ad43a698d20645264113a9": {
+        "name": "alexaSK2ac7db1fb5ad43a698d20645264113a9",
+        "type": "ALEXA",
+        "config": {
+          "type": 1,
+          "verifiedID": true,
+          "skillID": "amzn1.ask.skill.2ac7db1f-b5ad-43a6-98d2-0645264113a9",
+          "applicationID": ""
+        }
+      }
+    },
+    "customTemplate": {
+      "syntax": "JSON",
+      "overrideDefault": false,
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "ask_sdk_core": {
+          "name": "ask_sdk_core",
+          "version": "1.13.0",
+          "dev": false,
+          "language": "python"
+        },
+        "boto3": {
+          "name": "boto3",
+          "version": "1.16.43",
+          "dev": false,
+          "language": "python"
+        },
+        "ask_sdk_model": {
+          "name": "ask_sdk_model",
+          "version": "1.34.1",
+          "dev": false,
+          "language": "python"
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "sigmaVersion": "1.6.0",
+    "projectName": "cfyl-demo",
+    "projectDescription": "Cook for Your Life alexa skills",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-west-2",
+    "platform": "AWS",
+    "language": "python",
+    "platformRegions": {},
+    "lastSave": 1612946206727
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "cfyl-demo",
+      "url": "https://github.com/jasonjkim20/cfyl-demo"
+    }
+  }
+}
